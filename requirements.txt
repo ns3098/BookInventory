@@ -2,16 +2,13 @@ certifi==2019.3.9
 chardet==3.0.4
 dj-database-url==0.5.0
 Django==2.2.10
-get==2019.3.22
 gunicorn==19.9.0
 idna==2.8
-post==2019.3.22
 psycopg2==2.8.1
 public==2019.3.22
 python-dotenv==0.10.1
 pytz==2018.9
 query-string==2019.3.22
-request==2019.3.22
 requests==2.21.0
 sqlparse==0.3.0
 urllib3==1.24.1
