@@ -30,7 +30,7 @@ SECRET_KEY = '=4pvh6n4_(ez$cq66i=j%0f42h57=s6wv)_m$*oq9_p&)w#oip'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['inventorybooksapp.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['online-book-inventory.herokuapp.com','127.0.0.1']
 
 
 # Application definition
