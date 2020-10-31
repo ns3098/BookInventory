@@ -44,7 +44,7 @@ python manage.py migrate
 ```sh
 python manage.py runserver
 ```
-- In your browser go to [this address](127.0.0.1:8000) .
+- In your browser go to [127.0.0.1:8000](127.0.0.1:8000) .
 
 ### Development
 
