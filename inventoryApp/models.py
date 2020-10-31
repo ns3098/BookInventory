@@ -7,6 +7,7 @@ class Books(models.Model):
     readlink = models.CharField(max_length=500)
     copies = models.IntegerField()
     bookid = models.CharField(max_length=100)
+    thumbnail = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title,self.copies

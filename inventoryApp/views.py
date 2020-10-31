@@ -11,15 +11,16 @@ def bookslist(request):
     idlist-> Lists of all books's Google Api id, exists in inventory db.
     """
     i=0
+    
     passdata =[0]*Books.objects.all().count()
     for book in Books.objects.all():
-        passdata[i] = {'title':book.title,'id':book.bookid,'copies':book.copies,'link':book.readlink}
+        passdata[i] = {'title':book.title,'id':book.bookid,'copies':book.copies,'link':book.readlink,'thumbnail':book.thumbnail}
         i+=1
 
     if request.GET.get('search'):
         # Fetch and show books for given query and also indicate weather it is exist in inventory or not.
         query = request.GET.get('mytextbox')
-        print(query)
+        
         r= requests.get(url="https://www.googleapis.com/books/v1/volumes?q="+ query)
         jsonlist = r.json()
         i=0 
@@ -35,11 +36,13 @@ def bookslist(request):
             i+=1
         for i in range(len(passdata)):
             idlist[i] = passdata[i]['id']
+        
         return render(request, 'index.html', {'passdata':passdata,'newbooks':newbooks,'idlist':idlist})
 
     if request.GET.get('Add'):
         # Add new Book to the inventory.
-        q=Books(title=request.GET.get('booktitle'),readlink=request.GET.get('booklink'),copies=1,bookid=request.GET.get('bookid'))
+        
+        q=Books(title=request.GET.get('booktitle'),readlink=request.GET.get('booklink'),copies=1,bookid=request.GET.get('bookid'),thumbnail=request.GET.get('thumbnail'))
         q.save()
         return redirect('/')
 
@@ -59,7 +62,7 @@ def bookslist(request):
             book.copies = book.copies - 1
             book.save()
         return redirect('/')
-
+    
     return render(request, 'index.html',{'passdata':passdata})
 
 
