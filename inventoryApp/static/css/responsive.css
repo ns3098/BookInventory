@@ -377,11 +377,7 @@
 .preview-1 a.nivo-nextNav {
   right: 5px;
 }    
-.shop-info-area {
-  background: rgba(0, 0, 0, 0) url("img/shop-info-bg.jpg") no-repeat scroll center center;
-  display: none;
-  padding: 0;
-}    
+  
 .section-title::before {
   height: 54px;
   right: 54px;
